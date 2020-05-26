@@ -1,18 +1,12 @@
 import React from 'react';
 import {
   StyleSheet,
-  ScrollView,
   View,
-  Image,
-  Text,
-  FlatList
 } from 'react-native';
 
 import Header from './components/Header'
 import Greating from './components/Greating.js'
-import Command from './components/Command'
-import { commands } from './components/util/Pedidos'
-
+import  CommandFlatList  from './components/CommandFlatList'
 class App extends React.Component{
 
   render(){
@@ -25,23 +19,7 @@ class App extends React.Component{
         
         <Greating UserName='Italo Chagas' />
 
-        <View>
-
-          <FlatList 
-            data = {commands}
-            renderItem={( {item} ) =>  
-              <Command 
-                OrderName={item.name}
-                OrderDate={item.date}
-                OrderImage={item.image}  
-                OrderPrice={item.price}
-                OrderDescription={item.description}
-              />
-            }
-          
-          />
-          
-        </View>
+        <CommandFlatList />
 
       </View>
     
